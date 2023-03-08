@@ -13,7 +13,7 @@ type PostMeta = {
 
 type Post = {
   meta: PostMeta
-  content: object
+  content: any
 }
 
 export async function getPostBySlug(slug: string): Promise<Post> {
@@ -27,6 +27,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     options: { parseFrontmatter: true },
   })
 
+  console.log(typeof content)
   return { meta: { ...frontmatter, slug: realSlug }, content }
 }
 
