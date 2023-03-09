@@ -1,6 +1,7 @@
 import React from "react"
-import { getAllPostsMeta } from "../../lib/mdx"
 import Link from "next/link"
+import Image from "next/image"
+import { getAllPostsMeta } from "../../lib/mdx"
 
 export const metadata = {
   title: "Blog",
@@ -23,13 +24,27 @@ const BlogPage = async () => {
                 href={`blog/${post.slug}`}
                 className="block p-8 rounded-md shadow-md bg-white hover:bg-neutral-100"
               >
-                <h3 className="text-2xl font-semibold">{post.title}</h3>
-                <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-500">
-                  <time>{post.publishDate}</time>
-                  <span>&middot;</span>
-                  <p>{post.minuteRead}</p>
+                <div className="flex flex-row space-x-2 items-center">
+                  <div className="w-1/4">
+                    <Image
+                      src={post.image}
+                      alt=""
+                      width={125}
+                      height={125}
+                      className="rounded-md"
+                      priority
+                    />
+                  </div>
+                  <div className="w-3/4">
+                    <h3 className="text-2xl font-semibold">{post.title}</h3>
+                    <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-500">
+                      <time>{post.publishDate}</time>
+                      <span>&middot;</span>
+                      <p>{post.minuteRead}</p>
+                    </div>
+                    <p className="text-sm">{post.description}</p>
+                  </div>
                 </div>
-                <p className="text-sm">{post.description}</p>
               </Link>
             </div>
           ))}

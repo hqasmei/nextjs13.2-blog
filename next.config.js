@@ -4,6 +4,9 @@ const nextConfig = {
     appDir: true,
     mdxRs: true,
   },
+  images: {
+    domains: ["tutorialsteacher.com"],
+  },
 }
 
 const withMDX = require("@next/mdx")()
