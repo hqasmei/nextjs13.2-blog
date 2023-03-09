@@ -27,7 +27,6 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     options: { parseFrontmatter: true },
   })
 
-  console.log(typeof content)
   return { meta: { ...frontmatter, slug: realSlug }, content }
 }
 
