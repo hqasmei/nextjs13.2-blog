@@ -40,7 +40,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
             <span className="text-lg group-hover:text-neutral-700">Back</span>
           </div>
         </Link>
-        <div className="container py-4 prose prose-neutral-100 lg:prose-xl">
+        <div className="py-4 mx-2 prose prose-neutral-100">
           {content}
         </div>
       </div>

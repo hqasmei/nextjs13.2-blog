@@ -8,6 +8,9 @@ type PostMeta = {
   title?: string
   author?: string
   publishDate?: string
+  description?: string
+  image?: string
+  minuteRead?: string
   slug?: string
 }
 
