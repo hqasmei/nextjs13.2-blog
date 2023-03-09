@@ -17,7 +17,7 @@ const Navbar = () => {
             className={
               pathname == "/"
                 ? "rounded-md py-2 px-3 text-sm font-bold text-neutral-500 transition duration-300"
-                : "rounded-md py-2 px-3 text-sm text-neutral-400  transition duration-300  hover:text-neutral-50"
+                : "rounded-md py-2 px-3 text-sm text-neutral-400  transition duration-300  hover:text-neutral-500"
             }
             href="/"
           >
@@ -27,7 +27,7 @@ const Navbar = () => {
             className={
               pathname == "/blog"
                 ? "rounded-md py-2 px-3 text-sm font-bold text-neutral-500 transition duration-300"
-                : "rounded-md py-2 px-3 text-sm text-neutral-400  transition duration-300  hover:text-neutral-50"
+                : "rounded-md py-2 px-3 text-sm text-neutral-400  transition duration-300  hover:text-neutral-500"
             }
             href="/blog"
           >

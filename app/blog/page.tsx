@@ -23,11 +23,13 @@ const BlogPage = async () => {
                 href={`blog/${post.slug}`}
                 className="block p-8 rounded-md shadow-md bg-white hover:bg-neutral-100"
               >
-                <h3 className="text-xl font-semibold">{post.title}</h3>
-                <p className="mt-4 text-sm">{post.author}</p>
-                <time className="text-[12px] text-gray-400">
-                  {post.publishDate}
-                </time>
+                <h3 className="text-2xl font-semibold">{post.title}</h3>
+                <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-500">
+                  <time>{post.publishDate}</time>
+                  <span>&middot;</span>
+                  <p>{post.minuteRead}</p>
+                </div>
+                <p className="text-sm">{post.description}</p>
               </Link>
             </div>
           ))}
