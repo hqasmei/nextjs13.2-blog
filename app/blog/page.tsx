@@ -27,7 +27,7 @@ const BlogPage = async () => {
                 <div className="flex flex-row space-x-2 items-center">
                   <div className="w-1/4">
                     <Image
-                      src={post.image}
+                      src={post.image!}
                       alt=""
                       width={125}
                       height={125}
