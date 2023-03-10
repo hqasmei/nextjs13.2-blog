@@ -17,34 +17,52 @@ const BlogPage = async () => {
         <h1 className="text-black text-4xl font-bold md:pb-4 md:text-6xl ">
           All Posts.
         </h1>
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-4">
           {posts?.map((post) => (
             <div key={post?.title} className="flex-grow">
               <Link
                 href={`blog/${post.slug}`}
-                className="block p-8 rounded-md shadow-md bg-white hover:bg-neutral-100"
+                className="block p-6 rounded-md shadow-md bg-white hover:bg-neutral-100"
               >
-                <div className="flex flex-row space-x-2 items-center">
-                  <div className="w-1/4">
-                    <Image
-                      src={post.image!}
-                      alt=""
-                      width={125}
-                      height={125}
-                      className="rounded-md"
-                      priority
-                    />
-                  </div>
-                  <div className="w-3/4">
-                    <h3 className="text-2xl font-semibold">{post.title}</h3>
-                    <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-500">
-                      <time>{post.publishDate}</time>
-                      <span>&middot;</span>
-                      <p>{post.minuteRead}</p>
+                {post?.image !== "" ? (
+                  <div className="flex flex-row space-x-2 items-center">
+                    <div className="w-full md:w-3/4">
+                      <h3 className="text-xl md:text-2xl font-semibold">
+                        {post.title}
+                      </h3>
+                      <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-500">
+                        <time>{post.publishDate}</time>
+                        <span>&middot;</span>
+                        <p>{post.minuteRead}</p>
+                      </div>
+                      <p className="text-sm">{post.description}</p>
                     </div>
-                    <p className="text-sm">{post.description}</p>
+                    <div className="hidden md:block md:w-1/4">
+                      <Image
+                        src={post.image!}
+                        alt=""
+                        width={125}
+                        height={125}
+                        className="rounded-md bg-cover"
+                        priority
+                      />
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="flex flex-row items-center">
+                    <div className="w-full md:w-3/4">
+                      <h3 className="text-xl md:text-2xl font-semibold">
+                        {post.title}
+                      </h3>
+                      <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-500">
+                        <time>{post.publishDate}</time>
+                        <span>&middot;</span>
+                        <p>{post.minuteRead}</p>
+                      </div>
+                      <p className="text-sm">{post.description}</p>
+                    </div>
+                  </div>
+                )}
               </Link>
             </div>
           ))}

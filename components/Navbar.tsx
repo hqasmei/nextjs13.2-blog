@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="flex">
           <Link className="text-xl font-bold hover:text-neutral-500" href="/">
             Logo
-          </Link> 
+          </Link>
         </div>
         <div className="flex">
           <Link
@@ -21,7 +21,7 @@ const Navbar = () => {
             }
             href="/"
           >
-            Home
+            About
           </Link>
           <Link
             className={
@@ -33,6 +33,7 @@ const Navbar = () => {
           >
             Blog
           </Link>
+          
         </div>
       </nav>
     </header>

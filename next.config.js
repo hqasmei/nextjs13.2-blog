@@ -5,7 +5,7 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: ["tutorialsteacher.com"],
+    domains: ["tutorialsteacher.com", "www.drupal.org"],
   },
 }
 
