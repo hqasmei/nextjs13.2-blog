@@ -14,15 +14,18 @@ const BlogPage = async () => {
   return (
     <main className="mx-auto w-full flex max-w-3xl flex-1">
       <div className="flex flex-col space-y-4 py-24 px-6 md:px-0 sm:py-28 md:space-y-0 flex-grow">
-        <h1 className="text-black text-4xl font-bold md:pb-4 md:text-6xl ">
+        <h1 className="text-white text-4xl font-bold md:pb-4 md:text-6xl">
           All Posts.
         </h1>
         <div className="flex flex-col space-y-4">
           {posts?.map((post) => (
-            <div key={post?.title} className="flex-grow">
+            <div
+              key={post?.title}
+              className="flex-grow bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 hover:bg-opacity-30 text-white"
+            >
               <Link
                 href={`blog/${post.slug}`}
-                className="block p-6 rounded-md shadow-md bg-white hover:bg-neutral-100"
+                className=" "
               >
                 {post?.image !== "" ? (
                   <div className="flex flex-row space-x-2 items-center">
@@ -30,7 +33,7 @@ const BlogPage = async () => {
                       <h3 className="text-xl md:text-2xl font-semibold">
                         {post.title}
                       </h3>
-                      <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-500">
+                      <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-400">
                         <time>{post.publishDate}</time>
                         <span>&middot;</span>
                         <p>{post.minuteRead}</p>
@@ -54,7 +57,7 @@ const BlogPage = async () => {
                       <h3 className="text-xl md:text-2xl font-semibold">
                         {post.title}
                       </h3>
-                      <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-500">
+                      <div className="flex flex-row space-x-2 items-center my-1 text-sm text-neutral-400">
                         <time>{post.publishDate}</time>
                         <span>&middot;</span>
                         <p>{post.minuteRead}</p>
