@@ -20,10 +20,10 @@ const Home = () => {
             Hi, my name is Chloe.
           </h2>
           <p className="text-neutral-300 text-base md:text-lg">
-            I'm a highly skilled and experienced developer with a passion for
-            building innovative solutions that solve real-world problems. With
-            over 10 years of experience in the industry, I've honed my skills in
-            a variety of programming languages, frameworks, and tools.
+            I&#39;m a highly skilled and experienced developer with a passion
+            for building innovative solutions that solve real-world problems.
+            With over 10 years of experience in the industry, I&#39;ve honed my
+            skills in a variety of programming languages, frameworks, and tools.
           </p>
         </div>
       </div>
