@@ -4,7 +4,7 @@ import Socials from "../components/Socials"
 const Home = () => {
   return (
     <main className="mx-auto w-full flex max-w-3xl flex-1 text-white">
-      <div className="flex flex-col space-y-4 py-24 px-6 md:px-0 sm:py-28 md:space-y-4 flex-grow items-center text-center">
+      <div className="flex flex-col space-y-4 py-24 px-6 md:px-0 sm:py-28 md:space-y-4 items-center text-center">
         <Image
           src="/headshot.jpg"
           alt=""

@@ -13,7 +13,7 @@ const Socials = () => {
         {SOCIALS.map((item: SocialItem, idx: number) => {
           return (
             <li key={idx}>
-              <a href={item.link} target="_blank" rel="noreferrer">
+              <a href={item.link} target="_blank" rel="noreferrer" >
                 {item.icon}
               </a>
             </li>

@@ -1,6 +1,6 @@
-
 import "../styles/globals.css"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 export const metadata = {
   title: "Home",
@@ -14,9 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-neutral-900">
+      <body className="flex h-screen flex-col bg-neutral-900">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   )
