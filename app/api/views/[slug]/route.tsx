@@ -18,7 +18,7 @@ export async function GET(
       where: { slug },
     })
 
-    return NextResponse.json({ views: post?.views || 1 }, { status: 200 })
+    return NextResponse.json(post?.views || 1, { status: 200 })
   } catch (error) {
     return NextResponse.json(
       { error: (error as Error).message },
@@ -44,7 +44,7 @@ export async function POST(
       update: { views: { increment: 1 } },
     })
 
-    return NextResponse.json({ views: post?.views || 1 }, { status: 200 })
+    return NextResponse.json(post?.views || 1, { status: 200 })
   } catch (error) {
     return NextResponse.json(
       { error: (error as Error).message },

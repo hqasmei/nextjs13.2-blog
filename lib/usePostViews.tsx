@@ -1,13 +1,10 @@
 import React from "react"
 import { useDebounce } from "react-use"
+import useSWR, { SWRConfiguration } from "swr"
 
 const API_URL = `/api/views`
 
-interface DataProps {
-  views: number
-}
-
-export async function getPostViews(slug: string): Promise<DataProps> {
+export async function getPostViews(slug: string): Promise<number> {
   const res = await fetch(API_URL + `/${slug}`)
   if (!res.ok) {
     throw new Error("An error occurred while fetching the data.")
@@ -25,4 +22,32 @@ export async function updatePostViews(slug: string): Promise<number> {
   }
 
   return res.json()
+}
+
+export const usePostViews = (slug: string, config?: SWRConfiguration) => {
+  const {
+    data: views,
+    error,
+    mutate,
+  } = useSWR<number>([API_URL, slug], () => getPostViews(slug), {
+    dedupingInterval: 60000,
+    ...config,
+  })
+
+  const increment = () => {
+    mutate(
+      updatePostViews(slug).catch((e) => {
+        console.log(e)
+
+        return 0
+      })
+    )
+  }
+
+  return {
+    views,
+    isLoading: !error && !views,
+    isError: !!error,
+    increment,
+  }
 }
