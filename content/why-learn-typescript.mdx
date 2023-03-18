@@ -3,75 +3,22 @@ title: "Why Learn TypeScript?"
 author: "Hosna Qasmei"
 description: "This blog post explains why developers should learn TypeScript and how it can improve the quality and maintainability of their code. It includes examples and code snippets to illustrate the benefits of TypeScript over JavaScript."
 image: "https://www.tutorialsteacher.com/Content/images/home/typescript.svg"
-minuteRead: "3 min read"
+minuteRead: "1 min read"
 publishDate: "March 6th, 2023"
 ---
 
 # Why Learn TypeScript?
+
 In the world of web development, JavaScript is an essential tool for building dynamic and interactive web applications. However, as projects grow in size and complexity, JavaScript can become difficult to manage and maintain. This is where TypeScript comes in - it is a statically-typed superset of JavaScript that adds additional features to make it easier to write and maintain code. In this post, we will explore some of the benefits of learning TypeScript and why it might be a good idea for you to consider adding it to your skill set.
 
 ## Catching Errors Early
+
 One of the main benefits of TypeScript is that it catches errors early in the development process. This is because TypeScript is a statically-typed language, which means that you define the data types of your variables, functions, and other objects. This allows the TypeScript compiler to check for errors before the code is run, which can save a lot of time and effort in the long run.
-
-Here's an example of how TypeScript catches errors early:
-
-```html
-// JavaScript
-function multiply(a, b) {
-  return a * b;
-}
-
-multiply("2", 3); // Returns "NaN"
-```
-
-```html
-// TypeScript
-function multiply(a: number, b: number): number {
-  return a * b;
-}
-
-multiply("2", 3); // Error: Argument of type 'string' is not assignable to parameter of type 'number'
-```
 
 In the JavaScript example, the multiply function takes two arguments, a and b, and returns their product. However, if you pass a string instead of a number as the first argument, the function returns NaN. This can be difficult to catch if the function is buried deep in your code.
 
 In the TypeScript example, we've added type annotations to the multiply function to specify that the arguments and return value should be of type number. If you try to pass a string instead of a number as the first argument, TypeScript will catch the error and prevent the code from running.
 
 ## Improved Code Quality and Maintainability
+
 By catching errors early, TypeScript can also help improve the overall quality and maintainability of your code. With the additional type annotations, your code becomes more self-documenting, making it easier to understand and maintain. Additionally, TypeScript can help identify potential issues before they become problems, allowing you to make changes and refactor code as needed.
-
-Here's an example of how TypeScript can improve code quality and maintainability:
-
-```html
-// JavaScript
-function getUser(name) {
-  // Do some stuff to get user
-  return user;
-}
-
-const user = getUser("John");
-
-console.log(user.age); // Returns undefined
-```
-
-```html
-// TypeScript
-interface User {
-  name: string;
-  age: number;
-}
-
-function getUser(name: string): User {
-  // Do some stuff to get user
-  return user;
-}
-
-const user = getUser("John");
-
-console.log(user.age); // Type error: Property 'age' does not exist on type 'User'
-```
-
-
-In the JavaScript example, we have a function that takes a name as an argument and returns a user object. However, the object does not have a defined structure, so it's unclear what properties it should have. In the next line of code, we try to access the age property of the user object, but it returns undefined.
-
-In the TypeScript example, we've defined an interface for the User object, which specifies that it should have a name property of type string and an age property of type number. When we call the getUser function, TypeScript checks that the returned object conforms to the User interface. This ensures that the user object has the expected properties, and if

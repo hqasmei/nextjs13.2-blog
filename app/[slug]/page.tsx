@@ -1,28 +1,28 @@
-import Link from "next/link"
-import { getPostBySlug } from "../../../lib/mdx"
-import FloatingAnimation from "../../../components/FloatingAnimation"
+import Link from "next/link";
+import { getPostBySlug } from "../../lib/mdx";
+import FloatingAnimation from "../../components/FloatingAnimation";
 
 const getPageContent = async (slug: string) => {
-  const { meta, content } = await getPostBySlug(slug)
-  return { meta, content }
-}
+  const { meta, content } = await getPostBySlug(slug);
+  return { meta, content };
+};
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: { slug: string };
 }) {
-  const { meta } = await getPageContent(params.slug)
-  return { title: meta.title }
+  const { meta } = await getPageContent(params.slug);
+  return { title: meta.title };
 }
 
 const Page = async ({ params }: { params: { slug: string } }) => {
-  const { content } = await getPageContent(params.slug)
+  const { content } = await getPageContent(params.slug);
 
   return (
     <main className="mx-auto w-full flex max-w-3xl flex-1  items-center justify-center">
       <div className="flex flex-col space-y-4 pt-24 px-6 md:px-0 text-white  sm:pt-28 md:space-y-0">
-        <Link href="/blog">
+        <Link href="/">
           <div className="group flex flex-row space-x-2 items-center mb-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         </div>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
