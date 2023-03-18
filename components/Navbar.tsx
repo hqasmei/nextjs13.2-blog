@@ -10,12 +10,12 @@ const Navbar = () => {
         <div className="flex">
           <div className="hidden md:block">
             <Link className="text-xl font-bold hover:text-neutral-500" href="/">
-              Blog Starter Template
+              Next.js 13 Starter Blog
             </Link>
           </div>
           <div className="flex md:hidden">
             <Link className="text-xl font-bold hover:text-neutral-500" href="/">
-              BST
+              NSB
             </Link>
           </div>
         </div>
